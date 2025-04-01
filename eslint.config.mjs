@@ -39,7 +39,7 @@ export default [
 
             parserOptions: {
                 project: 'tsconfig.json',
-                tsconfigRootDir: '/Users/javi/Documents/todo-list-bug',
+                tsconfigRootDir: './',
             },
         },
 
