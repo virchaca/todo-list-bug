@@ -23,7 +23,8 @@ export class TasksService {
         this.logger.log(`Fetching tasks for user with ID: ${userId}`);
         try {
             const tasks = await this.tasksRepository.find({
-                where: { userId },
+                where: { owner: { id: userId } }, // usar la relacion owner
+                relations: ['owner'], // si necesitamos los datos del usuario
             });
             this.logger.log(
                 `Found ${tasks.length} tasks for user with ID: ${userId}`,

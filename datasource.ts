@@ -1,4 +1,4 @@
-const { DataSource } = require('typeorm');
+import { DataSource } from 'typeorm'; //cambiar required por import
 
 export default new DataSource({
     type: 'sqlite',

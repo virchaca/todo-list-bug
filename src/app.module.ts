@@ -12,6 +12,7 @@ import path from 'node:path';
             type: 'sqlite',
             database: path.resolve(__dirname, '../../db/db.sqlite'),
             autoLoadEntities: true,
+            logging: true, // Habilita logs de consultas SQL
         }),
         TasksModule,
         AuthModule,

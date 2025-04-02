@@ -24,10 +24,8 @@ export class Task {
     @Column()
     dueDate: string;
 
-    @ManyToOne(() => User, (user) => user.tasks)
+    @ManyToOne(() => User, (user) => user.tasks, { onDelete: 'CASCADE' })
+    // si un usuario es eliminado, que sus tareas tambien lo sean
     @JoinColumn({ name: 'userId' }) // Relacionar con la entidad User
     owner: User;
-
-    @Column() // Columna nueva para almacenar el ID del usuario
-    userId: string;
 }
